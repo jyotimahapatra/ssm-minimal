@@ -1,0 +1,402 @@
+[root@ip-172-16-84-119 ec2-user]# tail -F /var/log/amazon/ssm/amazon-ssm-agent.log
+  InstanceId: "i-0bbe18240b848fcd8",
+  PlatformName: "Amazon Linux",
+  PlatformType: "Linux",
+  PlatformVersion: "2",
+  SSMConnectionChannel: "ssmmessages"
+}
+2024-06-13 00:01:02 DEBUG [ssm-agent-worker] [HealthCheck] UpdateInstanceInformation Response{
+
+}
+2024-06-13 00:01:04 DEBUG [ssm-agent-worker] [MessageService] [EngineProcessor] [BasicExecuter] [35c81cf8-f650-479d-8c01-db8e0592ccfd] process: 17981 exited successfully, trying to stop messaging worker
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [MGSInteractor] received message through control channel fc7afceb-0748-4c71-9297-39da2744d2b7, message type: agent_job
+2024-06-13 00:01:27 INFO ssm-document-worker - v3.3.0.0
+2024-06-13 00:01:27 INFO picking up runtime config identity selector
+2024-06-13 00:01:27 DEBUG Checking if agent has OnPrem identity type
+2024-06-13 00:01:27 INFO Checking if agent identity type OnPrem can be assumed
+2024-06-13 00:01:27 DEBUG Checking if agent has EC2 identity type
+2024-06-13 00:01:27 INFO Checking if agent identity type EC2 can be assumed
+2024-06-13 00:01:27 DEBUG [AuthRegisterService] Determining endpoint for service ssm in region us-west-2
+2024-06-13 00:01:27 DEBUG [EC2Identity] Determining endpoint for service ssm in region us-west-2
+2024-06-13 00:01:27 INFO Agent will take identity from EC2
+2024-06-13 00:01:27 INFO [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] Init the cloudwatchlogs publisher
+2024-06-13 00:01:27 INFO [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] document: 98d9215c-400a-4549-8730-4ef02ac648e0 worker started
+2024-06-13 00:01:27 INFO [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] channel: 98d9215c-400a-4549-8730-4ef02ac648e0 found
+2024-06-13 00:01:27 INFO [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] Successfully loaded platform dependent plugin aws:runShellScript
+2024-06-13 00:01:27 INFO [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] inter process communication started at /var/lib/amazon/ssm/i-0bbe18240b848fcd8/channels/98d9215c-400a-4549-8730-4ef02ac648e0
+2024-06-13 00:01:27 INFO [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] worker listener started on path: /var/lib/amazon/ssm/i-0bbe18240b848fcd8/channels/98d9215c-400a-4549-8730-4ef02ac648e0
+2024-06-13 00:01:27 DEBUG [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] consuming all the messages under: /var/lib/amazon/ssm/i-0bbe18240b848fcd8/channels/98d9215c-400a-4549-8730-4ef02ac648e0
+2024-06-13 00:01:27 DEBUG [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] consuming message under path: /var/lib/amazon/ssm/i-0bbe18240b848fcd8/channels/98d9215c-400a-4549-8730-4ef02ac648e0/master-20240613000127-000
+2024-06-13 00:01:27 DEBUG [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] IPC file not readable: tmp
+2024-06-13 00:01:27 DEBUG [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] received event: "/var/lib/amazon/ssm/i-0bbe18240b848fcd8/channels/98d9215c-400a-4549-8730-4ef02ac648e0/master-20240613000127-000": REMOVE
+2024-06-13 00:01:27 DEBUG [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] received datagram from /var/lib/amazon/ssm/i-0bbe18240b848fcd8/channels/98d9215c-400a-4549-8730-4ef02ac648e0: {"version":"1.0","type":"pluginconfig","content":"{\"DocumentInformation\":{\"DocumentID\":\"98d9215c-400a-4549-8730-4ef02ac648e0\",\"CommandID\":\"98d9215c-400a-4549-8730-4ef02ac648e0\",\"AssociationID\":\"\",\"InstanceID\":\"i-0bbe18240b848fcd8\",\"MessageID\":\"aws.ssm.98d9215c-400a-4549-8730-4ef02ac648e0.i-0bbe18240b848fcd8\",\"RunID\":\"2024-06-13T00-01-27.470Z\",\"CreatedDate\":\"56418-10-05 00:17:49 +0000 UTC\",\"DocumentName\":\"trial\",\"DocumentVersion\":\"\",\"DocumentStatus\":\"InProgress\",\"RunCount\":0,\"ProcInfo\":{\"Pid\":18035,\"StartTime\":\"2024-06-13T00:01:27.471979152Z\"},\"ClientId\":\"\",\"RunAsUser\":\"\",\"SessionOwner\":\"\"},\"DocumentType\":\"SendCommand\",\"SchemaVersion\":\"2.2\",\"InstancePluginsInformation\":[{\"Configuration\":{\"Settings\":null,\"Properties\":{\"runCommand\":[\"{\\\"command\\\": \\\"hello-world1\\\"}\",\"{\\\"command\\\": \\\"hello-world2\\\"}\"]},\"OutputS3KeyPrefix\":\"98d9215c-400a-4549-8730-4ef02ac648e0/i-0bbe18240b848fcd8/awsrunShellScript\",\"OutputS3BucketName\":\"\",\"S3EncryptionEnabled\":false,\"CloudWatchLogGroup\":\"\",\"CloudWatchEncryptionEnabled\":false,\"CloudWatchStreamingEnabled\":false,\"OrchestrationDirectory\":\"/var/lib/amazon/ssm/i-0bbe18240b848fcd8/document/orchestration/98d9215c-400a-4549-8730-4ef02ac648e0/example\",\"MessageId\":\"aws.ssm.98d9215c-400a-4549-8730-4ef02ac648e0.i-0bbe18240b848fcd8\",\"BookKeepingFileName\":\"98d9215c-400a-4549-8730-4ef02ac648e0\",\"PluginName\":\"aws:runShellScript\",\"PluginID\":\"example\",\"DefaultWorkingDirectory\":\"\",\"Preconditions\":{},\"IsPreconditionEnabled\":true,\"CurrentAssociations\":null,\"SessionId\":\"\",\"ClientId\":\"\",\"KmsKeyId\":\"\",\"RunAsEnabled\":false,\"RunAsUser\":\"\",\"ShellProfile\":{\"windows\":\"\",\"linux\":\"\"},\"SessionOwner\":\"\",\"UpstreamServiceName\":\"\"},\"Name\":\"aws:runShellScript\",\"Result\":{\"pluginID\":\"\",\"pluginName\":\"\",\"status\":\"\",\"code\":0,\"output\":null,\"startDateTime\":\"0001-01-01T00:00:00Z\",\"endDateTime\":\"0001-01-01T00:00:00Z\",\"outputS3BucketName\":\"\",\"outputS3KeyPrefix\":\"\",\"stepName\":\"\",\"error\":\"\",\"standardOutput\":\"\",\"standardError\":\"\"},\"Id\":\"example\"}],\"CancelInformation\":{\"CancelMessageID\":\"\",\"CancelCommandID\":\"\",\"Payload\":\"\",\"DebugInfo\":\"\"},\"IOConfig\":{\"OrchestrationDirectory\":\"/var/lib/amazon/ssm/i-0bbe18240b848fcd8/document/orchestration/98d9215c-400a-4549-8730-4ef02ac648e0\",\"OutputS3BucketName\":\"\",\"OutputS3KeyPrefix\":\"98d9215c-400a-4549-8730-4ef02ac648e0/i-0bbe18240b848fcd8\",\"CloudWatchConfig\":{\"LogGroupName\":\"\",\"LogStreamPrefix\":\"\",\"LogGroupEncryptionEnabled\":false}},\"UpstreamServiceName\":\"MessageGatewayService\"}"}
+2024-06-13 00:01:27 INFO [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] [DataBackend] received plugin config message
+2024-06-13 00:01:27 INFO [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] [DataBackend] {"DocumentInformation":{"DocumentID":"98d9215c-400a-4549-8730-4ef02ac648e0","CommandID":"98d9215c-400a-4549-8730-4ef02ac648e0","AssociationID":"","InstanceID":"i-0bbe18240b848fcd8","MessageID":"aws.ssm.98d9215c-400a-4549-8730-4ef02ac648e0.i-0bbe18240b848fcd8","RunID":"2024-06-13T00-01-27.470Z","CreatedDate":"56418-10-05 00:17:49 +0000 UTC","DocumentName":"trial","DocumentVersion":"","DocumentStatus":"InProgress","RunCount":0,"ProcInfo":{"Pid":18035,"StartTime":"2024-06-13T00:01:27.471979152Z"},"ClientId":"","RunAsUser":"","SessionOwner":""},"DocumentType":"SendCommand","SchemaVersion":"2.2","InstancePluginsInformation":[{"Configuration":{"Settings":null,"Properties":{"runCommand":["{\"command\": \"hello-world1\"}","{\"command\": \"hello-world2\"}"]},"OutputS3KeyPrefix":"98d9215c-400a-4549-8730-4ef02ac648e0/i-0bbe18240b848fcd8/awsrunShellScript","OutputS3BucketName":"","S3EncryptionEnabled":false,"CloudWatchLogGroup":"","CloudWatchEncryptionEnabled":false,"CloudWatchStreamingEnabled":false,"OrchestrationDirectory":"/var/lib/amazon/ssm/i-0bbe18240b848fcd8/document/orchestration/98d9215c-400a-4549-8730-4ef02ac648e0/example","MessageId":"aws.ssm.98d9215c-400a-4549-8730-4ef02ac648e0.i-0bbe18240b848fcd8","BookKeepingFileName":"98d9215c-400a-4549-8730-4ef02ac648e0","PluginName":"aws:runShellScript","PluginID":"example","DefaultWorkingDirectory":"","Preconditions":{},"IsPreconditionEnabled":true,"CurrentAssociations":null,"SessionId":"","ClientId":"","KmsKeyId":"","RunAsEnabled":false,"RunAsUser":"","ShellProfile":{"windows":"","linux":""},"SessionOwner":"","UpstreamServiceName":""},"Name":"aws:runShellScript","Result":{"pluginID":"","pluginName":"","status":"","code":0,"output":null,"startDateTime":"0001-01-01T00:00:00Z","endDateTime":"0001-01-01T00:00:00Z","outputS3BucketName":"","outputS3KeyPrefix":"","stepName":"","error":"","standardOutput":"","standardError":""},"Id":"example"}],"CancelInformation":{"CancelMessageID":"","CancelCommandID":"","Payload":"","DebugInfo":""},"IOConfig":{"OrchestrationDirectory":"/var/lib/amazon/ssm/i-0bbe18240b848fcd8/document/orchestration/98d9215c-400a-4549-8730-4ef02ac648e0","OutputS3BucketName":"","OutputS3KeyPrefix":"98d9215c-400a-4549-8730-4ef02ac648e0/i-0bbe18240b848fcd8","CloudWatchConfig":{"LogGroupName":"","LogStreamPrefix":"","LogGroupEncryptionEnabled":false}},"UpstreamServiceName":"MessageGatewayService"}
+2024-06-13 00:01:27 DEBUG [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] [DataBackend] unmarshal plugin config: {DocumentInformation:{DocumentID:98d9215c-400a-4549-8730-4ef02ac648e0 CommandID:98d9215c-400a-4549-8730-4ef02ac648e0 AssociationID: InstanceID:i-0bbe18240b848fcd8 MessageID:aws.ssm.98d9215c-400a-4549-8730-4ef02ac648e0.i-0bbe18240b848fcd8 RunID:2024-06-13T00-01-27.470Z CreatedDate:56418-10-05 00:17:49 +0000 UTC DocumentName:trial DocumentVersion: DocumentStatus:InProgress RunCount:0 ProcInfo:{Pid:18035 StartTime:2024-06-13 00:01:27.471979152 +0000 UTC} ClientId: RunAsUser: SessionOwner:} DocumentType:SendCommand SchemaVersion:2.2 InstancePluginsInformation:[{Configuration:{Settings:<nil> Properties:map[runCommand:[{"command": "hello-world1"} {"command": "hello-world2"}]] OutputS3KeyPrefix:98d9215c-400a-4549-8730-4ef02ac648e0/i-0bbe18240b848fcd8/awsrunShellScript OutputS3BucketName: S3EncryptionEnabled:false CloudWatchLogGroup: CloudWatchEncryptionEnabled:false CloudWatchStreamingEnabled:false OrchestrationDirectory:/var/lib/amazon/ssm/i-0bbe18240b848fcd8/document/orchestration/98d9215c-400a-4549-8730-4ef02ac648e0/example MessageId:aws.ssm.98d9215c-400a-4549-8730-4ef02ac648e0.i-0bbe18240b848fcd8 BookKeepingFileName:98d9215c-400a-4549-8730-4ef02ac648e0 PluginName:aws:runShellScript PluginID:example DefaultWorkingDirectory: Preconditions:map[] IsPreconditionEnabled:true CurrentAssociations:[] SessionId: ClientId: KmsKeyId: RunAsEnabled:false RunAsUser: ShellProfile:{Windows: Linux:} SessionOwner: UpstreamServiceName:} Name:aws:runShellScript Result:{PluginID: PluginName: Status: Code:0 Output:<nil> StartDateTime:0001-01-01 00:00:00 +0000 UTC EndDateTime:0001-01-01 00:00:00 +0000 UTC OutputS3BucketName: OutputS3KeyPrefix: StepName: Error: StandardOutput: StandardError:} Id:example}] CancelInformation:{CancelMessageID: CancelCommandID: Payload: DebugInfo:} IOConfig:{OrchestrationDirectory:/var/lib/amazon/ssm/i-0bbe18240b848fcd8/document/orchestration/98d9215c-400a-4549-8730-4ef02ac648e0 OutputS3BucketName: OutputS3KeyPrefix:98d9215c-400a-4549-8730-4ef02ac648e0/i-0bbe18240b848fcd8 CloudWatchConfig:{LogGroupName: LogStreamPrefix: LogGroupEncryptionEnabled:false}} UpstreamServiceName:MessageGatewayService}
+2024-06-13 00:01:27 DEBUG [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] [DataBackend] Checking Status for plugin aws:runShellScript -
+2024-06-13 00:01:27 DEBUG [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] [DataBackend] plugin - aws:runShellScript has empty state, initialize as NotStarted
+2024-06-13 00:01:27 DEBUG [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] [DataBackend] Executing plugin - aws:runShellScript
+2024-06-13 00:01:27 DEBUG [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] [DataBackend] getting platform details
+2024-06-13 00:01:27 DEBUG [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] [DataBackend] fetching platform details from /etc/os-release
+2024-06-13 00:01:27 DEBUG [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] [DataBackend] Command output &{Amazon Linux 2}
+2024-06-13 00:01:27 DEBUG [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] [DataBackend] getting platform details
+2024-06-13 00:01:27 DEBUG [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] [DataBackend] fetching platform details from /etc/os-release
+2024-06-13 00:01:27 DEBUG [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] [DataBackend] Command output &{Amazon Linux 2}
+2024-06-13 00:01:27 DEBUG [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] [DataBackend] isSupported flag = true
+2024-06-13 00:01:27 DEBUG [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] [DataBackend] isPluginHandlerFound flag = true
+2024-06-13 00:01:27 DEBUG [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] [DataBackend] isPreconditionEnabled flag = true
+2024-06-13 00:01:27 DEBUG [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] [DataBackend] Cross-platform Precondition is not present
+2024-06-13 00:01:27 INFO [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] [DataBackend] Running plugin aws:runShellScript example
+2024-06-13 00:01:27 DEBUG [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] [DataBackend] [pluginName=aws:runShellScript] IOHandler Initialization with config: {/var/lib/amazon/ssm/i-0bbe18240b848fcd8/document/orchestration/98d9215c-400a-4549-8730-4ef02ac648e0  98d9215c-400a-4549-8730-4ef02ac648e0/i-0bbe18240b848fcd8 {  false}}
+2024-06-13 00:01:27 DEBUG [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] [DataBackend] [pluginName=aws:runShellScript] Initializing the Stdout Multi-writer with file and console listeners
+2024-06-13 00:01:27 DEBUG [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] [DataBackend] [pluginName=aws:runShellScript] Starting a new stream reader go routing
+2024-06-13 00:01:27 DEBUG [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] [DataBackend] [pluginName=aws:runShellScript] Starting a new stream reader go routing
+2024-06-13 00:01:27 DEBUG [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] [DataBackend] [pluginName=aws:runShellScript] Initializing the Stderr Multi-writer with file and console listeners
+2024-06-13 00:01:27 DEBUG [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] [DataBackend] [pluginName=aws:runShellScript] Starting a new stream reader go routing
+2024-06-13 00:01:27 DEBUG [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] [DataBackend] [pluginName=aws:runShellScript] Starting a new stream reader go routing
+2024-06-13 00:01:27 INFO [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] [DataBackend] [pluginName=aws:runShellScript] Eks plugin started with configuration {<nil> map[runCommand:[{"command": "hello-world1"} {"command": "hello-world2"}]] 98d9215c-400a-4549-8730-4ef02ac648e0/i-0bbe18240b848fcd8/awsrunShellScript  false  false false /var/lib/amazon/ssm/i-0bbe18240b848fcd8/document/orchestration/98d9215c-400a-4549-8730-4ef02ac648e0/example aws.ssm.98d9215c-400a-4549-8730-4ef02ac648e0.i-0bbe18240b848fcd8 98d9215c-400a-4549-8730-4ef02ac648e0 aws:runShellScript example  map[] true []    false  { }  MessageGatewayService}
+2024-06-13 00:01:27 INFO [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] [DataBackend] [pluginName=aws:runShellScript] Eks plugin command received commandId: 98d9215c-400a-4549-8730-4ef02ac648e0
+2024-06-13 00:01:27 INFO [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] [DataBackend] [pluginName=aws:runShellScript] Eks plugin command received {"command": "hello-world1"}
+2024-06-13 00:01:27 DEBUG [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] [DataBackend] [pluginName=aws:runShellScript] OrchestrationDir /var/lib/amazon/ssm/i-0bbe18240b848fcd8/document/orchestration/98d9215c-400a-4549-8730-4ef02ac648e0/awsrunShellScript/example
+2024-06-13 00:01:27 DEBUG [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] [DataBackend] [pluginName=aws:runShellScript] OrchestrationDir /var/lib/amazon/ssm/i-0bbe18240b848fcd8/document/orchestration/98d9215c-400a-4549-8730-4ef02ac648e0/awsrunShellScript/example
+2024-06-13 00:01:27 DEBUG [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] [DataBackend] [pluginName=aws:runShellScript] IOHandler closing all subscribed writers.
+2024-06-13 00:01:27 DEBUG Determining endpoint for service logs in region us-west-2
+2024-06-13 00:01:27 DEBUG Determining endpoint for service logs in region us-west-2
+2024-06-13 00:01:27 ERROR [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] [DataBackend] [pluginName=aws:runShellScript] Plugin crashed with message runtime error: invalid memory address or nil pointer dereference!
+2024-06-13 00:01:27 ERROR [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] [DataBackend] [pluginName=aws:runShellScript] Stacktrace:
+goroutine 28 [running]:
+runtime/debug.Stack()
+        runtime/debug/stack.go:24 +0x5e
+github.com/aws/amazon-ssm-agent/agent/framework/runpluginutil.init.func1.1()
+        github.com/aws/amazon-ssm-agent/agent/framework/runpluginutil/runpluginutil.go:329 +0x159
+panic({0x55de394a7c00?, 0x55de399981b0?})
+        runtime/panic.go:770 +0x132
+github.com/aws/amazon-ssm-agent/agent/plugins/eks.(*runEksPlugin).Execute(_, {{0x0, 0x0}, {0x55de394a1100, 0xc0003fd050}, {0xc000598000, 0x4a}, {0x0, 0x0}, 0x0, ...}, ...)
+        github.com/aws/amazon-ssm-agent/agent/plugins/eks/proxy.go:69 +0x66e
+github.com/aws/amazon-ssm-agent/agent/framework/runpluginutil.executePlugin({_, _}, {_, _}, {_, _}, {{0x0, 0x0}, {0x55de394a1100, 0xc0003fd050}, ...}, ...)
+        github.com/aws/amazon-ssm-agent/agent/framework/runpluginutil/runpluginutil.go:409 +0x1a6
+github.com/aws/amazon-ssm-agent/agent/framework/runpluginutil.init.func1({_, _}, {_, _}, {_, _}, {{0x0, 0x0}, {0x55de394a1100, 0xc0003fd050}, ...}, ...)
+        github.com/aws/amazon-ssm-agent/agent/framework/runpluginutil/runpluginutil.go:376 +0x533
+github.com/aws/amazon-ssm-agent/agent/framework/runpluginutil.RunPlugins({0x55de39587890, 0xc0000f9808}, {0xc0004be008, 0x1, 0x1}, {{0xc000075880, 0x63}, {0x0, 0x0}, {0xc000446200, ...}, ...}, ...)
+        github.com/aws/amazon-ssm-agent/agent/framework/runpluginutil/runpluginutil.go:211 +0x1159
+main.init.func1({_, _}, {{{0xc0000a44b0, 0x24}, {0xc0000a44e0, 0x24}, {0x0, 0x0}, {0xc000384a50, 0x13}, ...}, ...}, ...)
+        ./main.go:33 +0xce
+created by github.com/aws/amazon-ssm-agent/agent/framework/processor/executer/outofproc/messaging.(*WorkerBackend).Process.func1 in goroutine 1
+        github.com/aws/amazon-ssm-agent/agent/framework/processor/executer/outofproc/messaging/backend.go:156 +0x169
+
+2024-06-13 00:01:27 INFO [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] [DataBackend] Sending plugin example completion message
+2024-06-13 00:01:27 DEBUG [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] [DataBackend] plugin: example done, sending reply message...
+2024-06-13 00:01:27 INFO [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] [DataBackend] document execution complete
+2024-06-13 00:01:27 INFO [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] [DataBackend] sending document complete response...
+2024-06-13 00:01:27 DEBUG [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] sending datagram to /var/lib/amazon/ssm/i-0bbe18240b848fcd8/channels/98d9215c-400a-4549-8730-4ef02ac648e0: {"version":"1.0","type":"reply","content":"{\"DocumentName\":\"\",\"DocumentVersion\":\"\",\"MessageID\":\"\",\"AssociationID\":\"\",\"PluginResults\":{\"example\":{\"pluginID\":\"example\",\"pluginName\":\"aws:runShellScript\",\"status\":\"Failed\",\"code\":1,\"output\":null,\"startDateTime\":\"2024-06-13T00:01:27.500187693Z\",\"endDateTime\":\"2024-06-13T00:01:27.501668306Z\",\"outputS3BucketName\":\"\",\"outputS3KeyPrefix\":\"\",\"stepName\":\"\",\"error\":\"Plugin crashed with message runtime error: invalid memory address or nil pointer dereference!\",\"standardOutput\":\"\",\"standardError\":\"\"}},\"Status\":\"InProgress\",\"LastPlugin\":\"example\",\"NPlugins\":0,\"UpstreamServiceName\":\"\",\"ResultType\":\"\",\"RelatedDocumentType\":\"\"}"}
+2024-06-13 00:01:27 DEBUG [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] sending datagram to /var/lib/amazon/ssm/i-0bbe18240b848fcd8/channels/98d9215c-400a-4549-8730-4ef02ac648e0: {"version":"1.0","type":"complete","content":"{\"DocumentName\":\"\",\"DocumentVersion\":\"\",\"MessageID\":\"\",\"AssociationID\":\"\",\"PluginResults\":{\"example\":{\"pluginID\":\"example\",\"pluginName\":\"aws:runShellScript\",\"status\":\"Failed\",\"code\":1,\"output\":null,\"startDateTime\":\"2024-06-13T00:01:27.500187693Z\",\"endDateTime\":\"2024-06-13T00:01:27.501668306Z\",\"outputS3BucketName\":\"\",\"outputS3KeyPrefix\":\"\",\"stepName\":\"\",\"error\":\"Plugin crashed with message runtime error: invalid memory address or nil pointer dereference!\",\"standardOutput\":\"\",\"standardError\":\"\"}},\"Status\":\"Failed\",\"LastPlugin\":\"\",\"NPlugins\":0,\"UpstreamServiceName\":\"\",\"ResultType\":\"\",\"RelatedDocumentType\":\"\"}"}
+2024-06-13 00:01:27 DEBUG [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] received event: "/var/lib/amazon/ssm/i-0bbe18240b848fcd8/channels/98d9215c-400a-4549-8730-4ef02ac648e0/worker-20240613000127-000": CREATE
+2024-06-13 00:01:27 DEBUG [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] received event: "/var/lib/amazon/ssm/i-0bbe18240b848fcd8/channels/98d9215c-400a-4549-8730-4ef02ac648e0/worker-20240613000127-001": CREATE
+2024-06-13 00:01:27 INFO [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] [DataBackend] stopping ipc worker...
+2024-06-13 00:01:27 INFO [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] requested shutdown, prepare to stop messaging
+2024-06-13 00:01:27 INFO [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] channel /var/lib/amazon/ssm/i-0bbe18240b848fcd8/channels/98d9215c-400a-4549-8730-4ef02ac648e0 requested close
+2024-06-13 00:01:27 DEBUG [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] received event: "/var/lib/amazon/ssm/i-0bbe18240b848fcd8/channels/98d9215c-400a-4549-8730-4ef02ac648e0/worker-20240613000127-000": REMOVE
+2024-06-13 00:01:27 INFO [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] Closed the file watcher listener thread
+2024-06-13 00:01:27 INFO [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] worker listener stopped on path: /var/lib/amazon/ssm/i-0bbe18240b848fcd8/channels/98d9215c-400a-4549-8730-4ef02ac648e0
+2024-06-13 00:01:27 INFO [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] channel /var/lib/amazon/ssm/i-0bbe18240b848fcd8/channels/98d9215c-400a-4549-8730-4ef02ac648e0 closed
+2024-06-13 00:01:27 DEBUG [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] consuming all the messages under: /var/lib/amazon/ssm/i-0bbe18240b848fcd8/channels/98d9215c-400a-4549-8730-4ef02ac648e0
+2024-06-13 00:01:27 DEBUG [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] IPC file not readable: tmp
+2024-06-13 00:01:27 DEBUG [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] IPC file not readable: worker-20240613000127-001
+2024-06-13 00:01:27 INFO [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] ipc channel closed, stop messaging worker
+2024-06-13 00:01:27 INFO [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] document worker closed
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [MGSInteractor] Processing AgentMessage: MessageType - agent_job, Id - fc7afceb-0748-4c71-9297-39da2744d2b7
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [MGSInteractor] Parsing AgentMessage fc7afceb-0748-4c71-9297-39da2744d2b7, Payload: {"schemaVersion":1,"jobId":"aws.ssm.98d9215c-400a-4549-8730-4ef02ac648e0.i-0bbe18240b848fcd8","topic":"aws.ssm.sendCommand","content":"{\"OutputS3KeyPrefix\":\"\",\"CloudWatchOutputEnabled\":\"false\",\"DocumentContent\":{\"schemaVersion\":\"2.2\",\"description\":\"Command Document Example JSON Template\",\"mainSteps\":[{\"inputs\":{\"runCommand\":[\"{\\\"command\\\": \\\"hello-world1\\\"}\",\"{\\\"command\\\": \\\"hello-world2\\\"}\"]},\"name\":\"example\",\"action\":\"aws:runShellScript\"}]},\"CloudWatchLogGroupName\":\"\",\"OutputS3Region\":\"us-west-2\",\"CommandId\":\"98d9215c-400a-4549-8730-4ef02ac648e0\",\"OutputS3BucketName\":\"\",\"DocumentName\":\"trial\"}"}
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [MGSInteractor] Processing AgentJob Message: fc7afceb-0748-4c71-9297-39da2744d2b7
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [MGSInteractor] AgentJobPayload: {"schemaVersion":1,"jobId":"aws.ssm.98d9215c-400a-4549-8730-4ef02ac648e0.i-0bbe18240b848fcd8","topic":"aws.ssm.sendCommand","content":"{\"OutputS3KeyPrefix\":\"\",\"CloudWatchOutputEnabled\":\"false\",\"DocumentContent\":{\"schemaVersion\":\"2.2\",\"description\":\"Command Document Example JSON Template\",\"mainSteps\":[{\"inputs\":{\"runCommand\":[\"{\\\"command\\\": \\\"hello-world1\\\"}\",\"{\\\"command\\\": \\\"hello-world2\\\"}\"]},\"name\":\"example\",\"action\":\"aws:runShellScript\"}]},\"CloudWatchLogGroupName\":\"\",\"OutputS3Region\":\"us-west-2\",\"CommandId\":\"98d9215c-400a-4549-8730-4ef02ac648e0\",\"OutputS3BucketName\":\"\",\"DocumentName\":\"trial\"}"}
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [MGSInteractor] Processing agent job send command message jobId: aws.ssm.98d9215c-400a-4549-8730-4ef02ac648e0.i-0bbe18240b848fcd8
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [MGSInteractor] Payload: {
+  "OutputS3KeyPrefix": "",
+  "CloudWatchOutputEnabled": "false",
+  "DocumentContent": {
+    "schemaVersion": "2.2",
+    "description": "Command Document Example JSON Template",
+    "mainSteps": [
+      {
+        "inputs": {
+          "runCommand": [
+            "{\"command\": \"hello-world1\"}",
+            "{\"command\": \"hello-world2\"}"
+          ]
+        },
+        "name": "example",
+        "action": "aws:runShellScript"
+      }
+    ]
+  },
+  "CloudWatchLogGroupName": "",
+  "OutputS3Region": "us-west-2",
+  "CommandId": "98d9215c-400a-4549-8730-4ef02ac648e0",
+  "OutputS3BucketName": "",
+  "DocumentName": "trial"
+}
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [MGSInteractor] Processing send command message aws.ssm.98d9215c-400a-4549-8730-4ef02ac648e0.i-0bbe18240b848fcd8
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [MGSInteractor] Validating SSM parameters
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [MGSInteractor] Type is - <nil> which was not found. Returning parameter without replacement
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [MGSInteractor] Resolving SSM parameters
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [MGSInteractor] ParsedMessage is {
+  "Parameters": null,
+  "DocumentContent": {
+    "schemaVersion": "2.2",
+    "description": "Command Document Example JSON Template",
+    "runtimeConfig": null,
+    "mainSteps": [
+      {
+        "action": "aws:runShellScript",
+        "inputs": {
+          "runCommand": [
+            "{\"command\": \"hello-world1\"}",
+            "{\"command\": \"hello-world2\"}"
+          ]
+        },
+        "maxAttempts": 0,
+        "name": "example",
+        "onFailure": "",
+        "settings": null,
+        "timeoutSeconds": 0,
+        "precondition": null
+      }
+    ],
+    "parameters": null,
+    "InvokedPlugin": ""
+  },
+  "CommandId": "98d9215c-400a-4549-8730-4ef02ac648e0",
+  "DocumentName": "trial",
+  "OutputS3KeyPrefix": "",
+  "OutputS3BucketName": "",
+  "CloudWatchLogGroupName": "",
+  "CloudWatchOutputEnabled": "false"
+}
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [MGSInteractor] pushing AgentJob message fc7afceb-0748-4c71-9297-39da2744d2b7 to MessageHandler incoming message chan
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [MessageHandler] submit incoming message aws.ssm.98d9215c-400a-4549-8730-4ef02ac648e0.i-0bbe18240b848fcd8
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [CommandProcessorWrapper] [Idempotency] command not found in the idempotency directory 98d9215c-400a-4549-8730-4ef02ac648e0
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [EngineProcessor] buffer limit start value for doc type SendCommand with command id 98d9215c-400a-4549-8730-4ef02ac648e0: tokenSize - 0 bufferLimit - 5
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [EngineProcessor] buffer limit end value for doc type SendCommand with command id 98d9215c-400a-4549-8730-4ef02ac648e0: tokenSize - 1 bufferLimit - 5
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [EngineProcessor] document aws.ssm.98d9215c-400a-4549-8730-4ef02ac648e0.i-0bbe18240b848fcd8 submission started
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [EngineProcessor] successfully persisted interim state in pending
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [EngineProcessor] document aws.ssm.98d9215c-400a-4549-8730-4ef02ac648e0.i-0bbe18240b848fcd8 submission ended
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [CommandProcessorWrapper] [Idempotency] writing command in the idempotency directory for command 98d9215c-400a-4549-8730-4ef02ac648e0
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [EngineProcessor] buffer limit end values for command aws.ssm.98d9215c-400a-4549-8730-4ef02ac648e0.i-0bbe18240b848fcd8: tokenSize - 0
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [EngineProcessor] Got job aws.ssm.98d9215c-400a-4549-8730-4ef02ac648e0.i-0bbe18240b848fcd8, starting worker
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [MGSInteractor] Payload length will be adjusted: 0
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [EngineProcessor] moved file 98d9215c-400a-4549-8730-4ef02ac648e0 from pending to current successfully
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [EngineProcessor] Running executer...
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [MGSInteractor] Successfully sent ack message id 9198a916-8549-4511-8130-5d5a941a76c0 back for JobID aws.ssm.98d9215c-400a-4549-8730-4ef02ac648e0.i-0bbe18240b848fcd8
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [MGSInteractor] Sending reply {
+  "additionalInfo": {
+    "agent": {
+      "lang": "en-US",
+      "name": "amazon-ssm-agent",
+      "os": "",
+      "osver": "1",
+      "ver": "3.3.0.0"
+    },
+    "dateTime": "2024-06-13T00:01:27.471Z",
+    "runId": "",
+    "runtimeStatusCounts": null
+  },
+  "documentStatus": "InProgress",
+  "documentTraceOutput": "",
+  "runtimeStatus": null
+}
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [EngineProcessor] [BasicExecuter] [98d9215c-400a-4549-8730-4ef02ac648e0] channel: 98d9215c-400a-4549-8730-4ef02ac648e0 not found, creating a new file channel...
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [MGSInteractor] Payload length will be adjusted: 0
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [MGSInteractor] successfully sent document response with client message id : 6c557475-e814-4cee-976c-930b7f7462d1 for CommandId 98d9215c-400a-4549-8730-4ef02ac648e0
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [MGSInteractor] pushed message fc7afceb-0748-4c71-9297-39da2744d2b7 with document id 98d9215c-400a-4549-8730-4ef02ac648e0 to processor
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [EngineProcessor] [BasicExecuter] [98d9215c-400a-4549-8730-4ef02ac648e0] channel not found, starting a new process...
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [EngineProcessor] [BasicExecuter] [98d9215c-400a-4549-8730-4ef02ac648e0] master listener started on path: /var/lib/amazon/ssm/i-0bbe18240b848fcd8/channels/98d9215c-400a-4549-8730-4ef02ac648e0
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [EngineProcessor] [BasicExecuter] [98d9215c-400a-4549-8730-4ef02ac648e0] consuming all the messages under: /var/lib/amazon/ssm/i-0bbe18240b848fcd8/channels/98d9215c-400a-4549-8730-4ef02ac648e0
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [EngineProcessor] [BasicExecuter] [98d9215c-400a-4549-8730-4ef02ac648e0] IPC file not readable: tmp
+2024-06-13 00:01:30 INFO [ssm-document-worker] [98d9215c-400a-4549-8730-4ef02ac648e0] Stop the cloudwatchlogs publisher
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [EngineProcessor] [BasicExecuter] [98d9215c-400a-4549-8730-4ef02ac648e0] successfully launched new process: 18035
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [EngineProcessor] overwriting contents of /var/lib/amazon/ssm/i-0bbe18240b848fcd8/document/state/current/98d9215c-400a-4549-8730-4ef02ac648e0
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [EngineProcessor] successfully persisted interim state in current
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [EngineProcessor] [BasicExecuter] [98d9215c-400a-4549-8730-4ef02ac648e0] inter process communication started at /var/lib/amazon/ssm/i-0bbe18240b848fcd8/channels/98d9215c-400a-4549-8730-4ef02ac648e0
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [EngineProcessor] [BasicExecuter] [98d9215c-400a-4549-8730-4ef02ac648e0] sending datagram to /var/lib/amazon/ssm/i-0bbe18240b848fcd8/channels/98d9215c-400a-4549-8730-4ef02ac648e0: {"version":"1.0","type":"pluginconfig","content":"{\"DocumentInformation\":{\"DocumentID\":\"98d9215c-400a-4549-8730-4ef02ac648e0\",\"CommandID\":\"98d9215c-400a-4549-8730-4ef02ac648e0\",\"AssociationID\":\"\",\"InstanceID\":\"i-0bbe18240b848fcd8\",\"MessageID\":\"aws.ssm.98d9215c-400a-4549-8730-4ef02ac648e0.i-0bbe18240b848fcd8\",\"RunID\":\"2024-06-13T00-01-27.470Z\",\"CreatedDate\":\"56418-10-05 00:17:49 +0000 UTC\",\"DocumentName\":\"trial\",\"DocumentVersion\":\"\",\"DocumentStatus\":\"InProgress\",\"RunCount\":0,\"ProcInfo\":{\"Pid\":18035,\"StartTime\":\"2024-06-13T00:01:27.471979152Z\"},\"ClientId\":\"\",\"RunAsUser\":\"\",\"SessionOwner\":\"\"},\"DocumentType\":\"SendCommand\",\"SchemaVersion\":\"2.2\",\"InstancePluginsInformation\":[{\"Configuration\":{\"Settings\":null,\"Properties\":{\"runCommand\":[\"{\\\"command\\\": \\\"hello-world1\\\"}\",\"{\\\"command\\\": \\\"hello-world2\\\"}\"]},\"OutputS3KeyPrefix\":\"98d9215c-400a-4549-8730-4ef02ac648e0/i-0bbe18240b848fcd8/awsrunShellScript\",\"OutputS3BucketName\":\"\",\"S3EncryptionEnabled\":false,\"CloudWatchLogGroup\":\"\",\"CloudWatchEncryptionEnabled\":false,\"CloudWatchStreamingEnabled\":false,\"OrchestrationDirectory\":\"/var/lib/amazon/ssm/i-0bbe18240b848fcd8/document/orchestration/98d9215c-400a-4549-8730-4ef02ac648e0/example\",\"MessageId\":\"aws.ssm.98d9215c-400a-4549-8730-4ef02ac648e0.i-0bbe18240b848fcd8\",\"BookKeepingFileName\":\"98d9215c-400a-4549-8730-4ef02ac648e0\",\"PluginName\":\"aws:runShellScript\",\"PluginID\":\"example\",\"DefaultWorkingDirectory\":\"\",\"Preconditions\":{},\"IsPreconditionEnabled\":true,\"CurrentAssociations\":null,\"SessionId\":\"\",\"ClientId\":\"\",\"KmsKeyId\":\"\",\"RunAsEnabled\":false,\"RunAsUser\":\"\",\"ShellProfile\":{\"windows\":\"\",\"linux\":\"\"},\"SessionOwner\":\"\",\"UpstreamServiceName\":\"\"},\"Name\":\"aws:runShellScript\",\"Result\":{\"pluginID\":\"\",\"pluginName\":\"\",\"status\":\"\",\"code\":0,\"output\":null,\"startDateTime\":\"0001-01-01T00:00:00Z\",\"endDateTime\":\"0001-01-01T00:00:00Z\",\"outputS3BucketName\":\"\",\"outputS3KeyPrefix\":\"\",\"stepName\":\"\",\"error\":\"\",\"standardOutput\":\"\",\"standardError\":\"\"},\"Id\":\"example\"}],\"CancelInformation\":{\"CancelMessageID\":\"\",\"CancelCommandID\":\"\",\"Payload\":\"\",\"DebugInfo\":\"\"},\"IOConfig\":{\"OrchestrationDirectory\":\"/var/lib/amazon/ssm/i-0bbe18240b848fcd8/document/orchestration/98d9215c-400a-4549-8730-4ef02ac648e0\",\"OutputS3BucketName\":\"\",\"OutputS3KeyPrefix\":\"98d9215c-400a-4549-8730-4ef02ac648e0/i-0bbe18240b848fcd8\",\"CloudWatchConfig\":{\"LogGroupName\":\"\",\"LogStreamPrefix\":\"\",\"LogGroupEncryptionEnabled\":false}},\"UpstreamServiceName\":\"MessageGatewayService\"}"}
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [EngineProcessor] [BasicExecuter] [98d9215c-400a-4549-8730-4ef02ac648e0] received event: "/var/lib/amazon/ssm/i-0bbe18240b848fcd8/channels/98d9215c-400a-4549-8730-4ef02ac648e0/master-20240613000127-000": CREATE
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [MGSInteractor] received message through control channel e84fffd4-a0d6-4fb6-bbd0-ad780b0cb69b, message type: agent_job_reply_ack
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [MGSInteractor] Processing AgentMessage: MessageType - agent_job_reply_ack, Id - e84fffd4-a0d6-4fb6-bbd0-ad780b0cb69b
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [MGSInteractor] received ack id 6c557475-e814-4cee-976c-930b7f7462d1 for message id e84fffd4-a0d6-4fb6-bbd0-ad780b0cb69b
+2024-06-13 00:01:27 WARN [ssm-agent-worker] [MessageService] [MGSInteractor] acknowledgement 6c557475-e814-4cee-976c-930b7f7462d1 received but could not find any reply threads running
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [EngineProcessor] [BasicExecuter] [98d9215c-400a-4549-8730-4ef02ac648e0] received event: "/var/lib/amazon/ssm/i-0bbe18240b848fcd8/channels/98d9215c-400a-4549-8730-4ef02ac648e0/master-20240613000127-000": REMOVE
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [EngineProcessor] [BasicExecuter] [98d9215c-400a-4549-8730-4ef02ac648e0] received event: "/var/lib/amazon/ssm/i-0bbe18240b848fcd8/channels/98d9215c-400a-4549-8730-4ef02ac648e0/worker-20240613000127-000": CREATE
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [EngineProcessor] [BasicExecuter] [98d9215c-400a-4549-8730-4ef02ac648e0] consuming message under path: /var/lib/amazon/ssm/i-0bbe18240b848fcd8/channels/98d9215c-400a-4549-8730-4ef02ac648e0/worker-20240613000127-000
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [EngineProcessor] [BasicExecuter] [98d9215c-400a-4549-8730-4ef02ac648e0] received event: "/var/lib/amazon/ssm/i-0bbe18240b848fcd8/channels/98d9215c-400a-4549-8730-4ef02ac648e0/worker-20240613000127-001": CREATE
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [EngineProcessor] [BasicExecuter] [98d9215c-400a-4549-8730-4ef02ac648e0] received datagram from /var/lib/amazon/ssm/i-0bbe18240b848fcd8/channels/98d9215c-400a-4549-8730-4ef02ac648e0: {"version":"1.0","type":"reply","content":"{\"DocumentName\":\"\",\"DocumentVersion\":\"\",\"MessageID\":\"\",\"AssociationID\":\"\",\"PluginResults\":{\"example\":{\"pluginID\":\"example\",\"pluginName\":\"aws:runShellScript\",\"status\":\"Failed\",\"code\":1,\"output\":null,\"startDateTime\":\"2024-06-13T00:01:27.500187693Z\",\"endDateTime\":\"2024-06-13T00:01:27.501668306Z\",\"outputS3BucketName\":\"\",\"outputS3KeyPrefix\":\"\",\"stepName\":\"\",\"error\":\"Plugin crashed with message runtime error: invalid memory address or nil pointer dereference!\",\"standardOutput\":\"\",\"standardError\":\"\"}},\"Status\":\"InProgress\",\"LastPlugin\":\"example\",\"NPlugins\":0,\"UpstreamServiceName\":\"\",\"ResultType\":\"\",\"RelatedDocumentType\":\"\"}"}
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [EngineProcessor] sending reply for plugin update: example
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [EngineProcessor] Done
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [CommandProcessorWrapper] received plugin: example result from Processor
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [CommandProcessorWrapper] reply submission ended aws.ssm.98d9215c-400a-4549-8730-4ef02ac648e0.i-0bbe18240b848fcd8
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [MGSInteractor] received reply for RunCommandResult aws.ssm.98d9215c-400a-4549-8730-4ef02ac648e0.i-0bbe18240b848fcd8 with message id 20a3d13a-4fb4-4b33-93ba-6de8fed74999
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [MGSInteractor] Processing reply message {
+  "DocumentName": "trial",
+  "DocumentVersion": "",
+  "MessageID": "aws.ssm.98d9215c-400a-4549-8730-4ef02ac648e0.i-0bbe18240b848fcd8",
+  "AssociationID": "",
+  "PluginResults": {
+    "example": {
+      "pluginID": "example",
+      "pluginName": "aws:runShellScript",
+      "status": "Failed",
+      "code": 1,
+      "output": null,
+      "startDateTime": "2024-06-13T00:01:27.500187693Z",
+      "endDateTime": "2024-06-13T00:01:27.501668306Z",
+      "outputS3BucketName": "",
+      "outputS3KeyPrefix": "",
+      "stepName": "",
+      "error": "Plugin crashed with message runtime error: invalid memory address or nil pointer dereference!",
+      "standardOutput": "",
+      "standardError": ""
+    }
+  },
+  "Status": "InProgress",
+  "LastPlugin": "example",
+  "NPlugins": 1,
+  "UpstreamServiceName": "MessageGatewayService",
+  "ResultType": "RunCommandResult",
+  "RelatedDocumentType": "SendCommand"
+}
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [MGSInteractor] Got reply msg Id 20a3d13a-4fb4-4b33-93ba-6de8fed74999 for RunCommandResult aws.ssm.98d9215c-400a-4549-8730-4ef02ac648e0.i-0bbe18240b848fcd8, starting reply thread
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [MGSInteractor] started reply processing - 20a3d13a-4fb4-4b33-93ba-6de8fed74999
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [MGSInteractor] Sending reply {
+  "additionalInfo": {
+    "agent": {
+      "lang": "en-US",
+      "name": "amazon-ssm-agent",
+      "os": "",
+      "osver": "1",
+      "ver": "3.3.0.0"
+    },
+    "dateTime": "2024-06-13T00:01:27.503Z",
+    "runId": "",
+    "runtimeStatusCounts": {
+      "Failed": 1
+    }
+  },
+  "documentStatus": "InProgress",
+  "documentTraceOutput": "",
+  "runtimeStatus": {
+    "example": {
+      "status": "Failed",
+      "code": 1,
+      "name": "aws:runShellScript",
+      "output": "Plugin crashed with message runtime error: invalid memory address or nil pointer dereference!",
+      "startDateTime": "2024-06-13T00:01:27.500Z",
+      "endDateTime": "2024-06-13T00:01:27.501Z",
+      "outputS3BucketName": "",
+      "outputS3KeyPrefix": "",
+      "stepName": "",
+      "standardOutput": "",
+      "standardError": ""
+    }
+  }
+}
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [MGSInteractor] Payload length will be adjusted: 0
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [MGSInteractor] successfully sent reply message id: 20a3d13a-4fb4-4b33-93ba-6de8fed74999
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [EngineProcessor] [BasicExecuter] [98d9215c-400a-4549-8730-4ef02ac648e0] consuming message under path: /var/lib/amazon/ssm/i-0bbe18240b848fcd8/channels/98d9215c-400a-4549-8730-4ef02ac648e0/worker-20240613000127-001
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [EngineProcessor] [BasicExecuter] [98d9215c-400a-4549-8730-4ef02ac648e0] received datagram from /var/lib/amazon/ssm/i-0bbe18240b848fcd8/channels/98d9215c-400a-4549-8730-4ef02ac648e0: {"version":"1.0","type":"complete","content":"{\"DocumentName\":\"\",\"DocumentVersion\":\"\",\"MessageID\":\"\",\"AssociationID\":\"\",\"PluginResults\":{\"example\":{\"pluginID\":\"example\",\"pluginName\":\"aws:runShellScript\",\"status\":\"Failed\",\"code\":1,\"output\":null,\"startDateTime\":\"2024-06-13T00:01:27.500187693Z\",\"endDateTime\":\"2024-06-13T00:01:27.501668306Z\",\"outputS3BucketName\":\"\",\"outputS3KeyPrefix\":\"\",\"stepName\":\"\",\"error\":\"Plugin crashed with message runtime error: invalid memory address or nil pointer dereference!\",\"standardOutput\":\"\",\"standardError\":\"\"}},\"Status\":\"Failed\",\"LastPlugin\":\"\",\"NPlugins\":0,\"UpstreamServiceName\":\"\",\"ResultType\":\"\",\"RelatedDocumentType\":\"\"}"}
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [EngineProcessor] [BasicExecuter] [98d9215c-400a-4549-8730-4ef02ac648e0] requested terminate messaging worker, destroying the channel
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [EngineProcessor] [BasicExecuter] [98d9215c-400a-4549-8730-4ef02ac648e0] channel /var/lib/amazon/ssm/i-0bbe18240b848fcd8/channels/98d9215c-400a-4549-8730-4ef02ac648e0 requested close
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [EngineProcessor] [BasicExecuter] [98d9215c-400a-4549-8730-4ef02ac648e0] received event: "/var/lib/amazon/ssm/i-0bbe18240b848fcd8/channels/98d9215c-400a-4549-8730-4ef02ac648e0/worker-20240613000127-000": REMOVE
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [EngineProcessor] [BasicExecuter] [98d9215c-400a-4549-8730-4ef02ac648e0] Closed the file watcher listener thread
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [EngineProcessor] [BasicExecuter] [98d9215c-400a-4549-8730-4ef02ac648e0] master listener stopped on path: /var/lib/amazon/ssm/i-0bbe18240b848fcd8/channels/98d9215c-400a-4549-8730-4ef02ac648e0
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [EngineProcessor] sending document: 98d9215c-400a-4549-8730-4ef02ac648e0 complete response
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [EngineProcessor] Done
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [CommandProcessorWrapper] command: aws.ssm.98d9215c-400a-4549-8730-4ef02ac648e0.i-0bbe18240b848fcd8 complete
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [CommandProcessorWrapper] reply submission ended aws.ssm.98d9215c-400a-4549-8730-4ef02ac648e0.i-0bbe18240b848fcd8
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [MGSInteractor] received reply for RunCommandResult aws.ssm.98d9215c-400a-4549-8730-4ef02ac648e0.i-0bbe18240b848fcd8 with message id 57169c7f-066a-40ec-ae95-871c5afadf7a
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [MGSInteractor] Processing reply message {
+  "DocumentName": "trial",
+  "DocumentVersion": "",
+  "MessageID": "aws.ssm.98d9215c-400a-4549-8730-4ef02ac648e0.i-0bbe18240b848fcd8",
+  "AssociationID": "",
+  "PluginResults": {
+    "example": {
+      "pluginID": "example",
+      "pluginName": "aws:runShellScript",
+      "status": "Failed",
+      "code": 1,
+      "output": null,
+      "startDateTime": "2024-06-13T00:01:27.500187693Z",
+      "endDateTime": "2024-06-13T00:01:27.501668306Z",
+      "outputS3BucketName": "",
+      "outputS3KeyPrefix": "",
+      "stepName": "",
+      "error": "Plugin crashed with message runtime error: invalid memory address or nil pointer dereference!",
+      "standardOutput": "",
+      "standardError": ""
+    }
+  },
+  "Status": "Failed",
+  "LastPlugin": "",
+  "NPlugins": 1,
+  "UpstreamServiceName": "MessageGatewayService",
+  "ResultType": "RunCommandResult",
+  "RelatedDocumentType": "SendCommand"
+}
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [MGSInteractor] Got reply msg Id 57169c7f-066a-40ec-ae95-871c5afadf7a for RunCommandResult aws.ssm.98d9215c-400a-4549-8730-4ef02ac648e0.i-0bbe18240b848fcd8, starting reply thread
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [MGSInteractor] started reply processing - 57169c7f-066a-40ec-ae95-871c5afadf7a
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [MGSInteractor] Sending reply {
+  "additionalInfo": {
+    "agent": {
+      "lang": "en-US",
+      "name": "amazon-ssm-agent",
+      "os": "",
+      "osver": "1",
+      "ver": "3.3.0.0"
+    },
+    "dateTime": "2024-06-13T00:01:27.504Z",
+    "runId": "",
+    "runtimeStatusCounts": {
+      "Failed": 1
+    }
+  },
+  "documentStatus": "Failed",
+  "documentTraceOutput": "",
+  "runtimeStatus": {
+    "example": {
+      "status": "Failed",
+      "code": 1,
+      "name": "aws:runShellScript",
+      "output": "Plugin crashed with message runtime error: invalid memory address or nil pointer dereference!",
+      "startDateTime": "2024-06-13T00:01:27.500Z",
+      "endDateTime": "2024-06-13T00:01:27.501Z",
+      "outputS3BucketName": "",
+      "outputS3KeyPrefix": "",
+      "stepName": "",
+      "standardOutput": "",
+      "standardError": ""
+    }
+  }
+}
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [MGSInteractor] Payload length will be adjusted: 0
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [MGSInteractor] successfully sent reply message id: 57169c7f-066a-40ec-ae95-871c5afadf7a
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [EngineProcessor] [BasicExecuter] [98d9215c-400a-4549-8730-4ef02ac648e0] channel /var/lib/amazon/ssm/i-0bbe18240b848fcd8/channels/98d9215c-400a-4549-8730-4ef02ac648e0 closed
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [EngineProcessor] [BasicExecuter] [98d9215c-400a-4549-8730-4ef02ac648e0] consuming all the messages under: /var/lib/amazon/ssm/i-0bbe18240b848fcd8/channels/98d9215c-400a-4549-8730-4ef02ac648e0
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [EngineProcessor] [BasicExecuter] [98d9215c-400a-4549-8730-4ef02ac648e0] IPC file not readable: tmp
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [EngineProcessor] [BasicExecuter] [98d9215c-400a-4549-8730-4ef02ac648e0] master removing directory...
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [EngineProcessor] overwriting contents of /var/lib/amazon/ssm/i-0bbe18240b848fcd8/document/state/current/98d9215c-400a-4549-8730-4ef02ac648e0
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [EngineProcessor] successfully persisted interim state in current
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [EngineProcessor] [BasicExecuter] [98d9215c-400a-4549-8730-4ef02ac648e0] Executer closed
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [EngineProcessor] execution of aws.ssm.98d9215c-400a-4549-8730-4ef02ac648e0.i-0bbe18240b848fcd8 is over. Removing interimState from current folder
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [EngineProcessor] successfully deleted file /var/lib/amazon/ssm/i-0bbe18240b848fcd8/document/state/current/98d9215c-400a-4549-8730-4ef02ac648e0
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [EngineProcessor] Worker completed
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [MGSInteractor] received message through control channel a4dffc2a-6f8d-4622-bad9-5e79b4500d1f, message type: agent_job_reply_ack
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [MGSInteractor] Processing AgentMessage: MessageType - agent_job_reply_ack, Id - a4dffc2a-6f8d-4622-bad9-5e79b4500d1f
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [MGSInteractor] received ack id 20a3d13a-4fb4-4b33-93ba-6de8fed74999 for message id a4dffc2a-6f8d-4622-bad9-5e79b4500d1f
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [MGSInteractor] received reply ack id 20a3d13a-4fb4-4b33-93ba-6de8fed74999
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [MGSInteractor] ended reply processing - 20a3d13a-4fb4-4b33-93ba-6de8fed74999
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [MGSInteractor] result processing done
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [MGSInteractor] reply sending done
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [MGSInteractor] received message through control channel ed66cef8-6a89-427e-928d-a300eae1cdd6, message type: agent_job_reply_ack
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [MGSInteractor] Processing AgentMessage: MessageType - agent_job_reply_ack, Id - ed66cef8-6a89-427e-928d-a300eae1cdd6
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [MGSInteractor] received ack id 57169c7f-066a-40ec-ae95-871c5afadf7a for message id ed66cef8-6a89-427e-928d-a300eae1cdd6
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [MGSInteractor] received reply ack id 57169c7f-066a-40ec-ae95-871c5afadf7a
+2024-06-13 00:01:27 INFO [ssm-agent-worker] [MessageService] [MGSInteractor] ended reply processing - 57169c7f-066a-40ec-ae95-871c5afadf7a
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [MGSInteractor] result processing done
+2024-06-13 00:01:27 DEBUG [ssm-agent-worker] [MessageService] [MGSInteractor] reply sending don
