@@ -42,6 +42,7 @@ func startUpdateAgentConnection(done <-chan struct{}) error {
 		InstanceId:           aws.String(instanceId),
 	}
 	go periodicUpdateAgentStatus(done, agentStatus, ssmClient)
+	return nil
 }
 
 func periodicUpdateAgentStatus(done <-chan struct{}, agentStatus ssmv1.UpdateInstanceInformationInput, ssmClient *ssmv1.SSM) {

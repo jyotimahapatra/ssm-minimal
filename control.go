@@ -48,6 +48,9 @@ func NewControlChannel() (*ControlChannel, error) {
 	}
 
 	sess, err := session.NewSession(aws.NewConfig().WithSTSRegionalEndpoint(endpoints.RegionalSTSEndpoint).WithRegion(region))
+	if err != nil {
+		return nil, err
+	}
 	creds := credentials.NewChainCredentials(
 		[]credentials.Provider{
 			&ec2rolecreds.EC2RoleProvider{
@@ -126,21 +129,25 @@ func (cc *ControlChannel) InitiateChannel() error {
 
 func (cc *ControlChannel) ProcessIncomingMessages(done <-chan struct{}) error {
 	go cc.processNextItem(done)
-
+	go cc.executeNextItem(done)
 	for {
 		select {
 		case <-done:
 			fmt.Println("done channel closed. Exiting")
 			return nil
 		default:
-			fmt.Println("Waiting for message")
 			agentMessage, err := cc.getAgentMessage()
 			if err != nil {
 				fmt.Printf("getAgentMessage error %v\n", err)
+				continue
+			}
+			if agentMessage == nil {
+				fmt.Println("Finished processing control_channel_ready message")
+				continue
 			}
 			cc.qmutex.Lock()
-			defer cc.qmutex.Unlock()
 			cc.queue = append(cc.queue, agentMessage)
+			cc.qmutex.Unlock()
 		}
 	}
 }
@@ -152,17 +159,14 @@ func (cc *ControlChannel) processNextItem(done <-chan struct{}) error {
 			fmt.Println("done channel closed. Exiting")
 			return nil
 		default:
-			cc.qmutex.Lock()
 			if len(cc.queue) == 0 {
 				continue
 			}
+			cc.qmutex.Lock()
 			am := cc.queue[0]
 			cc.queue = cc.queue[1:]
 			cc.qmutex.Unlock()
-			if am.MessageType == "control_channel_ready" {
-				fmt.Println("received control_channel_ready")
-				continue
-			}
+			fmt.Printf("Got an item to process %v\n", am)
 			cc.addToQueue(am)
 		}
 	}
@@ -175,13 +179,16 @@ func (cc *ControlChannel) executeNextItem(done <-chan struct{}) error {
 			fmt.Println("done channel closed. Exiting")
 			return nil
 		default:
-			cc.eqMutex.Lock()
-			if len(cc.queue) == 0 {
+			if len(cc.executionQueue) == 0 {
 				continue
 			}
+			cc.eqMutex.Lock()
 			ex := cc.executionQueue[0]
 			cc.executionQueue = cc.executionQueue[1:]
 			cc.eqMutex.Unlock()
+			fmt.Printf("This is where the payload is passed to piezo or eks-init: %s, %v\n", ex.input.RunCommand, ex.input)
+			fmt.Printf("Executing commandid: %s\n", ex.docState.DocumentInformation.CommandID)
+			time.Sleep(1 * time.Minute)
 			succ, err := constructMessage(&DocumentResult{
 				DocumentName:    ex.documentName,
 				LastPlugin:      "",
@@ -230,6 +237,7 @@ func (cc *ControlChannel) executeNextItem(done <-chan struct{}) error {
 func (cc *ControlChannel) addToQueue(agentMessage *AgentMessage) {
 	switch agentMessage.MessageType {
 	case "agent_job":
+		fmt.Printf("Received agent_job for processing %v\n", agentMessage)
 		var agentJobPayload AgentJobPayload
 		err := json.Unmarshal(agentMessage.Payload, &agentJobPayload)
 		if err != nil {
@@ -237,6 +245,7 @@ func (cc *ControlChannel) addToQueue(agentMessage *AgentMessage) {
 			return
 		}
 		if !strings.HasPrefix(agentJobPayload.Topic, "aws.ssm.sendCommand") {
+			fmt.Printf("%s does not match sendCommand topic\n", agentJobPayload.Topic)
 			return
 		}
 		docState, err := parseAgentJobSendCommandMessage(agentJobPayload, cc.instanceId, *agentMessage)
@@ -259,16 +268,17 @@ func (cc *ControlChannel) addToQueue(agentMessage *AgentMessage) {
 		}, ResultStatusInProgress, "", nil)
 		sendDocResponse(payloadDoc, docState, cc.conn)
 
-		config := docState.InstancePluginsInformation[0].Configuration
+		pluginInfo := docState.InstancePluginsInformation[0]
 		var pluginInput RunScriptPluginInput
-		err = Remarshal(config, &pluginInput)
+		err = Remarshal(pluginInfo.Configuration.Properties, &pluginInput)
 		if err != nil {
 			fmt.Printf("Remarshal error: %v\n", err)
 			return
 		}
+		fmt.Printf("RunScriptPluginInput %v\n", pluginInput)
 
-		if config.PluginName != "aws:runShellScript" {
-			fmt.Printf("Unknown plugin name: %s\n", config.PluginName)
+		if pluginInfo.Configuration.PluginName != "aws:runShellScript" {
+			fmt.Printf("Unknown plugin name: %s\n", pluginInfo.Configuration.PluginName)
 			return
 		}
 
@@ -276,11 +286,11 @@ func (cc *ControlChannel) addToQueue(agentMessage *AgentMessage) {
 
 		cc.executionQueue = append(cc.executionQueue, Execution{
 			commandId:       docState.DocumentInformation.CommandID,
-			input:           pluginInput,
+			input:           &pluginInput,
 			documentName:    docState.DocumentInformation.DocumentName,
 			messageId:       docState.DocumentInformation.MessageID,
 			documentVersion: docState.DocumentInformation.DocumentVersion,
-			pluginName:      config.PluginID,
+			pluginName:      pluginInfo.Configuration.PluginID,
 			docState:        docState,
 		})
 		cc.eqMutex.Unlock()
@@ -309,8 +319,8 @@ func (cc *ControlChannel) getAgentMessage() (*AgentMessage, error) {
 		return nil, err
 	}
 	fmt.Printf("received message through control channel %v, message type: %s\n", agentMessage.MessageId, agentMessage.MessageType)
-	if agentMessage.MessageType != "control_channel_ready" {
-		return nil, fmt.Errorf("Unexpected workflow")
+	if agentMessage.MessageType == "control_channel_ready" {
+		return nil, nil
 	}
 	return agentMessage, nil
 }
@@ -382,10 +392,46 @@ func Remarshal(obj interface{}, remarshalledObj interface{}) (err error) {
 
 type Execution struct {
 	commandId       string
-	input           RunScriptPluginInput
+	input           *RunScriptPluginInput
 	documentName    string
 	messageId       string
 	documentVersion string
 	pluginName      string
 	docState        *DocumentState
+}
+
+func makeRestcall(request []byte, methodType string, url string, region string, signer *v4.Signer) ([]byte, error) {
+	httpRequest, err := http.NewRequest(methodType, url, bytes.NewBuffer(request))
+	if err != nil {
+		return nil, fmt.Errorf("failed to create http request: %s", err)
+	}
+
+	httpRequest.Header.Set("Content-Type", "application/json")
+	_, err = signer.Sign(httpRequest, bytes.NewReader(request), "ssmmessages", region, time.Now())
+	if err != nil {
+		return nil, fmt.Errorf("failed to sign the request: %s", err)
+	}
+
+	transport := http.DefaultTransport.(*http.Transport).Clone()
+	client := &http.Client{
+		Timeout:   time.Second * 15,
+		Transport: transport,
+	}
+
+	resp, err := client.Do(httpRequest)
+	if err != nil {
+		return nil, fmt.Errorf("failed to make http client call: %s", err)
+	}
+
+	defer resp.Body.Close()
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return nil, fmt.Errorf("failed to read bytes from http response: %s", err)
+	}
+
+	if resp.StatusCode == 201 {
+		return body, nil
+	} else {
+		return nil, fmt.Errorf("unexpected response from the service %s", body)
+	}
 }
