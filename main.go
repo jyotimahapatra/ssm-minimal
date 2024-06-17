@@ -123,6 +123,15 @@ type AgentJobAck struct {
 	ErrorMessage string `json:"errorMessage"`
 }
 
+/*
+&{{cb9b7c66-d838-410a-b675-f36b2302df92 cb9b7c66-d838-410a-b675-f36b2302df92  i-0bbe18240b848fcd8 aws.ssm.cb9b7c66-d838-410a-b675-f36b2302df92.i-0bbe18240b848fcd8 2024-06-16T03-24-28.887Z 56427-05-12 00:01:11 +0000 UTC trial  InProgress 0 {0 0001-01-01 00:00:00 +0000 UTC}   } SendCommand 2.2
+InstancePluginsInformation [
+
+	PluginState{
+		Configuration{<nil> map[runCommand:[{"command": "hello-world1"} {"command": "hello-world2"}]]   false  false false  aws.ssm.cb9b7c66-d838-410a-b675-f36b2302df92.i-0bbe18240b848fcd8 cb9b7c66-d838-410a-b675-f36b2302df92 aws:runShellScript example  map[] false []    false  { }  }
+		Name: aws:runShellScript
+		PluginResult: {   0 <nil> 0001-01-01 00:00:00 +0000 UTC 0001-01-01 00:00:00 +0000 UTC      } example}] CancelInformation{   } IOConfig{  cb9b7c66-d838-410a-b675-f36b2302df92/i-0bbe18240b848fcd8 {  false}} UpstreamServiceName: MessageGatewayService}
+*/
 type DocumentState struct {
 	DocumentInformation        DocumentInfo
 	DocumentType               DocumentType

@@ -1,0 +1,23 @@
+[root@ip-172-16-95-237 ec2-user]# tail -F /var/log/amazon/ssm/amazon-ssm-agent.log
+2024-06-17 21:41:07 INFO [ssm-agent-worker] [MessageService] [Association] Based upon expression rate(3 hours) and last execution date 2024-06-17T19-29-12.819Z, next scheduled date for association 6328c05d-d709-4b8a-a96e-d4d97df8b4e2 is 2024-06-17T22-29-12.819Z
+2024-06-17 21:41:07 INFO [ssm-agent-worker] [MessageService] [Association] Scheduling association 6328c05d-d709-4b8a-a96e-d4d97df8b4e2, setting next ScheduledDate to 2024-06-17T22-29-12.819Z
+2024-06-17 21:41:07 INFO [ssm-agent-worker] [MessageService] [Association] Schedule manager refreshed with 1 associations, 0 new associations associated
+2024-06-17 21:41:07 INFO [ssm-agent-worker] [MessageService] [Association] Next association is scheduled at 2024-06-17 22:29:12.819 +0000 UTC, association will wait for 48m4.943065272s
+2024-06-17 21:43:54 INFO [ssm-agent-worker] [HealthCheck] HealthCheck reporting agent health.
+2024-06-17 21:43:54 INFO [ECSIdentity] Agent not taking ECS identity: Could not fetch metadata endpoint
+2024-06-17 21:43:54 INFO [ssm-agent-worker] [HealthCheck] got SSM connection channel value: ssmmessages
+2024-06-17 21:45:49 INFO [ssm-agent-worker] [MessageService] [Association] Next association is scheduled at 2024-06-17 22:29:12.819 +0000 UTC, association will wait for 43m23.312741782s
+2024-06-17 21:45:52 INFO [ssm-agent-worker] [MessageService] [MGSInteractor] send failed reply thread started
+2024-06-17 21:45:52 INFO [ssm-agent-worker] [MessageService] [MGSInteractor] send failed reply thread done
+2024-06-17 21:48:54 INFO [ssm-agent-worker] [HealthCheck] HealthCheck reporting agent health.
+2024-06-17 21:48:54 INFO [ECSIdentity] Agent not taking ECS identity: Could not fetch metadata endpoint
+2024-06-17 21:48:54 INFO [ssm-agent-worker] [HealthCheck] got SSM connection channel value: ssmmessages
+2024-06-17 21:50:49 INFO [ssm-agent-worker] [MessageService] [Association] Next association is scheduled at 2024-06-17 22:29:12.819 +0000 UTC, association will wait for 38m23.312688634s
+2024-06-17 21:50:50 INFO [ssm-agent-worker] [LongRunningPluginsManager] There are no long running plugins currently getting executed - skipping their healthcheck
+2024-06-17 21:50:50 INFO [ssm-agent-worker] [MessageService] [MessageHandler] started idempotency deletion thread
+2024-06-17 21:50:50 INFO [ssm-agent-worker] [MessageService] [MessageHandler] ended idempotency deletion thread
+2024-06-17 21:50:52 INFO [ssm-agent-worker] [MessageService] [MGSInteractor] send failed reply thread started
+2024-06-17 21:50:52 INFO [ssm-agent-worker] [MessageService] [MGSInteractor] send failed reply thread done
+2024-06-17 21:50:54 INFO EC2RoleProvider Successfully connected with instance profile role credentials
+2024-06-17 21:50:54 INFO [CredentialRefresher] Credentials ready
+2024-06-17 21:50:54 INFO [CredentialRefresher] Next credential rotation will be in 29.999993043933333 minutes
